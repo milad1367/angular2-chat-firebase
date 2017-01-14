@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { ChatMessage } from '../chat-message';
+import { ChatMessagesService } from '../chat-messages.service';
 
 @Component({
   selector: 'app-chat-message-list',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-message-list.component.css']
 })
 export class ChatMessageListComponent implements OnInit {
-
-  constructor() { }
+  @Input() roomId: string;
+  messages: Observable<ChatMessage[]>;
+  constructor(private _cs: ChatMessagesService) { }
 
   ngOnInit() {
+    this.messages = this._cs.getMessagesByRoomId(this.roomId);
+  }
+  trackByKey(index: number, entry: ChatMessage) {
+    return entry.$key;
   }
 
 }
