@@ -1,3 +1,18 @@
-<p>
-  select-room works!
-</p>
+<div>
+  <div *ngFor="let room of rooms | async">
+    
+    <p>
+      name:{{ room.name }}
+    </p>
+    
+    <p>
+      description:{{ room.description }}
+    </p>
+    <p>
+      <a [routerLink]="['/chat', room.$key]">JOIN</a>
+    </p>
+  </div>
+  <div *ngIf="(rooms | async)?.length < 1">
+    <h2>No rooms available</h2>
+  </div>
+</div>
