@@ -22,5 +22,5 @@ export class ChatMessageListComponent implements OnInit {
   trackByKey(index: number, entry: ChatMessage) {
     return entry.$key;
   }
-
+//gdgdg
 }
