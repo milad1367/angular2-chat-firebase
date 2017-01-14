@@ -10,7 +10,16 @@ import { ChatMessageFormComponent } from './chat-message-form/chat-message-form.
 import { ChatMessageListComponent } from './chat-message-list/chat-message-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SelectRoomComponent } from './select-room/select-room.component';
+import { RouterModule } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
 
+const firebaseConfig = {
+    apiKey: "AIzaSyBi3EWvzJAgXl1zNEzO1wLtXOB8hoJNU98",
+    authDomain: "firetry-beb15.firebaseapp.com",
+    databaseURL: "https://firetry-beb15.firebaseio.com",
+    storageBucket: "firetry-beb15.appspot.com",
+    messagingSenderId: "205225722228"
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +33,17 @@ import { SelectRoomComponent } from './select-room/select-room.component';
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: SelectRoomComponent
+      },
+      {
+        path: 'chat/:roomId',
+        component: ChatComponent
+      }
+    ]),
+    AngularFireModule.initializeApp(firebaseConfig),
     HttpModule
   ],
   providers: [],
