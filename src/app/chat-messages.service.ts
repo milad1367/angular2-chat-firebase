@@ -15,6 +15,7 @@ export class ChatMessagesService {
       }
     });
   }
+  
 
   createNewMessage(roomId: string, newMessage: ChatMessage): Promise<void> {
     newMessage.created = new Date().toUTCString();
