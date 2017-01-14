@@ -12,7 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SelectRoomComponent } from './select-room/select-room.component';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
-
+import { ChatMessagesService } from './chat-messages.service';
 const firebaseConfig = {
     apiKey: "AIzaSyBi3EWvzJAgXl1zNEzO1wLtXOB8hoJNU98",
     authDomain: "firetry-beb15.firebaseapp.com",
@@ -46,7 +46,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     HttpModule
   ],
-  providers: [],
+  providers: [ChatMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

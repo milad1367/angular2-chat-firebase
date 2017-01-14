@@ -9,11 +9,15 @@ import { ChatMessagesService } from '../chat-messages.service';
   styleUrls: ['./chat-message-list.component.css']
 })
 export class ChatMessageListComponent implements OnInit {
+
   @Input() roomId: string;
+
   messages: Observable<ChatMessage[]>;
-  constructor() { }
+
+  constructor(private _cs: ChatMessagesService) { }
 
   ngOnInit() {
+    this.messages = this._cs.getMessagesByRoomId(this.roomId);
   }
   trackByKey(index: number, entry: ChatMessage) {
     return entry.$key;
