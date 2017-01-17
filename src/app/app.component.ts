@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { ChatMessage } from './chat-message';
+import { ChatMessagesService } from './chat-messages.service';
 
 @Component({
   selector: 'app-root',

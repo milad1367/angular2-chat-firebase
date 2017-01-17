@@ -11,7 +11,7 @@ export class ChatMessagesService {
   getMessagesByRoomId(roomId: string): Observable<ChatMessage[]> {
     return this._af.database.list('/messages/' + roomId, {
       query: {
-        limitToLast: 2
+        limitToLast: 3
       }
     });
   }

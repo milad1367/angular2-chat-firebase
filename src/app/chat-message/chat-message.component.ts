@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { ChatMessage } from '../chat-message';
 @Component({
   selector: 'app-chat-message',
-  templateUrl: './chat-message.component.html',
-  styleUrls: ['./chat-message.component.css']
+  template: `
+  <div>
+    <h3>
+      {{ message.author }}
+    </h3>
+    <p>
+      {{ message.body}}
+    </p>
+  </div>
+  `,
+ 
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChatMessageComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ChatMessageComponent {
+  @Input() message: ChatMessage;
+  
 }
