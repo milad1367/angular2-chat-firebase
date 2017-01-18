@@ -1,6 +1,6 @@
 
 
-    <form  [formGroup]="chatMessageForm">
+    <form (ngSubmit)="saveMessage()" [formGroup]="chatMessageForm">
       <input formControlName="author" placeholder="Your name">
       <p><textarea formControlName="body"></textarea></p>
       <button  type="submit" [disabled]="!chatMessageForm.valid">Send</button>
