@@ -1,3 +1,8 @@
-<p>
-  chat-message-form works!
-</p>
+
+
+    <form  [formGroup]="chatMessageForm">
+      <input formControlName="author" placeholder="Your name">
+      <p><textarea formControlName="body"></textarea></p>
+      <button  type="submit" [disabled]="!chatMessageForm.valid">Send</button>
+    </form>
+  
