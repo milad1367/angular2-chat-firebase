@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
@@ -34,6 +36,7 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
+    MaterialModule.forRoot(),
     ReactiveFormsModule, 
     RouterModule.forRoot([
       {

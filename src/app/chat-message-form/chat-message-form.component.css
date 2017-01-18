@@ -1,0 +1,7 @@
+.content {
+  width: 100%;
+  display: block;
+  resize: vertical;
+  font-family: Roboto;
+  font-size: 14px;
+}

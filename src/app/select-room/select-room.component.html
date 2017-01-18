@@ -1,17 +1,15 @@
-<div>
-  <div *ngFor="let room of rooms | async">
-    
-    <p>
-      name:{{ room.name }}
-    </p>
-    
-    <p>
-      description:{{ room.description }}
-    </p>
-    <p>
-      <a [routerLink]="['/chat', room.$key]">JOIN</a>
-    </p>
-  </div>
+<div class="room-container">
+  <md-card *ngFor="let room of rooms | async">
+    <md-card-title>
+      {{ room.name }}
+    </md-card-title>
+    <md-card-content>
+      <p>{{ room.description }}</p>
+    </md-card-content>
+    <md-card-actions>
+        <a [routerLink]="['/chat', room.$key]" md-raised-button color="primary">JOIN</a>
+      </md-card-actions>
+  </md-card>
   <div *ngIf="(rooms | async)?.length < 1">
     <h2>No rooms available</h2>
   </div>
