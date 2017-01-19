@@ -2,7 +2,7 @@
 
 live demo https://milad1367.github.io/angular2-chat-firebase/
 
-# for iranian users please run vpn because firebase is blocked for iran.
+## for iranian users please run vpn because firebase is blocked for iran.
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
 ## Development server
