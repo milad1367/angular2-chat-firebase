@@ -1,5 +1,5 @@
 # Angular2ChatFirebase
-this is simple messanger project as a practic with angular2 , firebase and angular material.join the room and write massege!   
+this is simple messanger project as a practic with angular2 , firebase and angular material.join the room and write message!   
 ## Demo
 live demo https://milad1367.github.io/angular2-chat-firebase/
 ## for iranian users please run vpn because firebase is blocked for iran.
